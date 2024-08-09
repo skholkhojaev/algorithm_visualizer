@@ -1,21 +1,20 @@
-export function sortedArray(array){
-  const SortedArray = [];
-  if (length.array = 1) return;
-  const Pivot = array[0]
-  Sort(pivot, array)
-  return SortedArray;
-}
-  
+function quickSort(array){
+  arrlen = array.length
+  if (arrlen <= 1) return array;
 
-function Sort(pivot, array){
-  let leftArray = [];
-  let rightArray= [];
-  for (let i = 1; i < array.length; i ++){
-    if (array[i] < pivot){
-      leftArray.push(array[i]);
+  const pivot = [];
+  const left = [];
+  const right = [];
+
+  for (let i = 0; i < arrlen -1; i++) {
+    if (array[i] < pivot) {
+      left.push(array[i]);
     }
     else {
-      rightArray.push(array[i]);
+      right.push(array[i]);
     }
+  return [...quickSort(left), pivot, ...quickSort(right)];
   }
 }
+
+export default quickSort();
